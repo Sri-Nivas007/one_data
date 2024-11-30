@@ -1,0 +1,121 @@
+/* Home container for centering the content */
+.home-container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(200px, 1fr)
+    ); /* Flexible columns */
+    grid-auto-rows: 5px; /* Set the base row height to control all spans */
+}
+
+/* Grid item - each image's container */
+.grid-item {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.grid-item:hover .overlay {
+    opacity: 1; /* Show the overlay on hover */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 25px; /* Match the image's rounded corners */
+}
+
+/* Save button */
+.save-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+   background-color: red;
+   color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden initially */
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show save button on hover */
+.grid-item:hover .save-btn {
+    display: block;
+}
+
+/* Image styling */
+.grid-image {
+    width: 100%;
+    height: 100%; /* Allow the image to fill the height of its container */
+    object-fit:fill ; /* Ensure image fits without distortion */
+    border-radius: 25px; /* Optional: rounded corners */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for image */
+}
+
+/* Classes for six minimized spans */
+.grid-item.span1 {
+    grid-row-end: span 30; /* Smallest height */
+}
+
+.grid-item.span2 {
+    grid-row-end: span 22; /* Slightly larger */
+}
+
+.grid-item.span3 {
+    grid-row-end: span 28; /* Medium height */
+}
+
+.grid-item.span4 {
+    grid-row-end: span 25; /* Medium-large height */
+}
+
+
+
+/* Mobile screens (2 images per row) */
+@media (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    }
+}
+
+/* Tablets (3 images per row) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+    }
+}
+
+/* 1024px screens (5 images per row) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .grid-container {
+        grid-template-columns: repeat(5, 1fr); /* 5 images per row */
+    }
+}
+
+/* Larger screens (6 images per row) */
+@media (min-width: 1280px) {
+    .grid-container {
+        grid-template-columns: repeat(6, 1fr); /* 6 images per row */
+    }
+}

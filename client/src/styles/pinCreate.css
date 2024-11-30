@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Ensures padding and borders are included in width/height calculations */
+}
+
+.create-pin-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.create-pin-content {
+    display: flex;
+    width: 90%;
+    max-width: 1200px; /* Keep max-width for consistency */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.image-section {
+    flex: 1;
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ccc;
+}
+
+.upload-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.upload-area:hover {
+    border-color: #007bff;
+}
+
+.preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.upload-placeholder {
+    color: #999;
+    text-align: center;
+}
+
+.form-section {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pin-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%; /* Ensure inputs take full width of the parent */
+    max-width: 100%; /* Remove any max-width restriction */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out;
+    overflow-wrap: break-word; /* Ensure long words or values break correctly */
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    width: 100%; /* Ensure button takes full width */
+    max-width: 560px; /* Limit button width for larger screens */
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center; /* Ensure text is centered */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .create-pin-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        margin-bottom: 20px;
+    }
+
+    .form-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submit-btn {
+        width: 100%; /* Ensure button takes full width */
+        max-width: 800px;
+        margin-bottom: 10px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 12px;
+        width: 100%; /* Ensure inputs take full width in smaller screens */
+        max-width: none; /* Remove max-width on smaller screens */
+    }
+
+    .upload-area {
+        height: 150px;
+    }
+}

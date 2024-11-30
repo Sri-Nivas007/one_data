@@ -1,0 +1,161 @@
+/* General Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+/* Left Section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-logo img {
+    height: 40px;
+}
+
+.navbar-left button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-left button:hover {
+    background-color: #f5f5f5;
+}
+
+/* Search Section */
+.navbar-search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    outline: none;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-input:focus {
+    border-color: black;
+    background-color: white;
+}
+
+/* Right Section */
+.navbar-profile {
+    width: 60px; /* Default size for profile container */
+    height: 50px;
+    border-radius: 50%; /* Circular container */
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    overflow: hidden; /* Clip overflowing content */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.profileimg {
+    width: 100%; /* Fill the parent container */
+    height: 100%;
+    border-radius: 50%; /* Keep circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Default font size for initials */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: red; /* Fallback color */
+    object-fit: cover; /* Ensure image fits properly */
+}
+
+/* Responsive Design */
+
+/* Small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navbar-left {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .navbar-search {
+        order: 2;
+        width: 100%;
+    }
+
+    .search-input {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .navbar-profile {
+        width: 40px; /* Adjust size for smaller screens below 786px */
+        height: 40px;
+        right: 10px; /* Adjust right margin for small screens */
+    }
+
+    .profileimg {
+        font-size: 18px; /* Reduce font size for initials */
+    }
+}
+
+/* Very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-logo img {
+        height: 30px;
+    }
+
+    .navbar-left button {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .search-input {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .navbar-profile {
+        width: 35px; /* Further adjust size for very small screens */
+        height: 35px;
+    }
+
+    .profileimg {
+        font-size: 14px; /* Adjust font size for initials */
+    }
+}
